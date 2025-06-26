@@ -120,21 +120,21 @@ namespace Minecraft
             Cursor.Hide();
 
             // Optional world generation: flat terrain or maze
-             for (int x = -10; x <= 100; x++)
-             {
-                 for (int z = -10; z <= 100; z++)
-                 {
-                     Random rnd = new Random();
-                     Color rndclr = Color.FromArgb(rnd.Next(1, 255), rnd.Next(1, 255), rnd.Next(1, 255));
-                     float y = 0f;
-                     terrainHeights[(x, z)] = y;
-                     var pos = new Vector3(x * blockSize, y, z * blockSize);
-                     AddBlock(x, 0, z);
-                 }
-             }
+            // for (int x = -10; x <= 100; x++)
+            // {
+            //     for (int z = -10; z <= 100; z++)
+            //     {
+            //         Random rnd = new Random();
+            //         Color rndclr = Color.FromArgb(rnd.Next(1, 255), rnd.Next(1, 255), rnd.Next(1, 255));
+            //         float y = 0f;
+            //         terrainHeights[(x, z)] = y;
+            //         var pos = new Vector3(x * blockSize, y, z * blockSize);
+            //         AddBlock(x, 0, z);
+            //     }
+            // }
 
             // LoadMap.LoadMapFromFile(this); // ← Uncomment to load a map
-            // Maze.BuildMazeFromFile(this); // ← Currently used for testing
+             Maze.BuildMazeFromFile(this); // ← Currently used for testing
 
             lightDirection = Normalize(lightDirection);
 
